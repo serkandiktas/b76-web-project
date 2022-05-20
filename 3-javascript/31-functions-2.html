@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- //oninput daha girerken toplama yapmayi saglar -->
+
+    <input type="number" id="txtSayi1" min="0" oninput="clickHesapla()">
+    <input type="number" id="txtSayi2" min="0" oninput="clickHesapla()">
+    
+    <input type="button" value="Hesapla" onclick="clickHesapla()">
+
+    <h3 id="sonuc"></h3>
+
+    <script>
+
+//event fonksiyon.bagimli.burdaki sonuc'la jenerikte ki sonuc farkli.scope olayi
+//sayi1 ve sayi2 icinde ayni.burada yasar ve olurler
+
+        function clickHesapla(){
+            const sayi1 = document.querySelector("#txtSayi1").value;
+            const sayi2 = document.querySelector("#txtSayi2").value;
+
+            const sonuc = topla(Number(sayi1), Number(sayi2));
+            document.querySelector("#sonuc").innerText = sonuc;
+        }
+//jenerik fonksiyon.text falan bagimliligi yok
+        function topla(s1, s2){
+            const sonuc = s1 + s2;
+            return sonuc;
+        }
+
+
+    </script>
+</body>
+</html>
